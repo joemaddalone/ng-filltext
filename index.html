@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="APP">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	
+<h2>Example #1: in the controller</h2>
+<div ng-controller="theController">
+	<table border="1" cellspacing="0" cellpadding="5">
+		<thead>
+			<td>id</td>
+			<td>First</td>
+			<td>Last</td>
+			<td>Email</td>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in users">
+				<td>{{user.id}}</td>
+				<td>{{user.fname}}</td>
+				<td>{{user.lname}}</td>
+				<td>{{user.email}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+<h2>Example #2: in the directive</h2>
+<table border="1" cellspacing="0" cellpadding="5">
+		<thead>
+			<td>id</td>
+			<td>First</td>
+			<td>Last</td>
+			<td>Phone</td>
+		</thead>
+		<tbody class="filltext-table"
+			dataset="{
+				'rows':'3',
+				'id':'{index}',
+				'fname':'{firstName}',
+				'lname':'{lastName}',
+				'email':'{email}'
+				}"
+				order="['id','fname','lname','email']">
+			
+		</tbody>
+	</table>
+
+
+</div>
+<script src="http//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+<script type="text/javascript" src="ng-filltext.js"></script>
+<script>
+	angular.module('APP',['ng-filltext']).
+	controller('theController',['$scope','$http','filltext',function($scope,$http,filltext){
+			var dataMockup = {
+				"rows":"3",
+				"id":"{index}",
+				"fname":"{firstName}",
+				"lname":"{lastName}",
+				"email":"{email}"
+			};
+		filltext.get(dataMockup,function(data){$scope.users=data})
+	}])
+	</script>
+</body>
+</html>
