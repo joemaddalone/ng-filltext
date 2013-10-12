@@ -47,14 +47,15 @@
 <script type="text/javascript" src="ng-filltext.js"></script>
 <script>
 	angular.module('APP',['ng-filltext']).
-	controller('theController',['$scope','filltext',function($scope,filltext){
+	controller('theController',['$scope','filltext',
+		function($scope,filltext){
 			var dataMockup = {
 				"rows":"3",
 				"id":"{index}",
 				"fname":"{firstName}",
 				"lname":"{lastName}",
 				"email":"{email}"
-			};
+			};	
 		filltext.get(dataMockup,function(data){$scope.users=data})
 	}])
 	</script>
