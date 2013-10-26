@@ -1,0 +1,25 @@
+{
+  "name": "ngFilltext",
+  "version": "1.0.0",
+  "homepage": "https://github.com/joemaddalone/ng-filltext",
+  "authors": [
+    "Joe Maddalone <joe@insert-title.com>"
+  ],
+  "description": "Service for calling filltext.com",
+  "main": "ng-filltext.js",
+  "keywords": [
+    "angular",
+    "JSON",
+    "filltext.com",
+    "testing",
+    "demo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
