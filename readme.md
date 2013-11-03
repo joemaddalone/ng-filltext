@@ -21,7 +21,7 @@ Example:
 				overview:'{lorem|10}',
 				position : '["CEO","CIO","CFO","C3PO"]'
 			}
-		filltext.get(config,function(data){
+		filltext.create(config,function(data){
 			$scope.people = data
 			console.log($scope.people)
 		});
